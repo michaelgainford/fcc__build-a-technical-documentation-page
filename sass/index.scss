@@ -6,19 +6,19 @@
   padding: 0;
 }
 
-body {
-  background-color: #30292f;
-  color: #efefef;
-  font-family: Poppins;
-  font-weight: 400;
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
+  /* base colours **/
+  --highlight-light: #efefef;
+  /* custom colours */
   --re__green: #43aa4f;
   --dm__blue: #07a9f4;
   --its__pink: #e82c8b;
-  --s_beige: #b6a16a;
-  --tc_yellow: #fdef2c;
+  --s__beige: #b6a16a;
+  --tc__yellow: #fdef2c;
   --f__pink: #af4398;
   --ec__blue: #6087c0;
   --iam__blue: #0199ae;
@@ -26,12 +26,171 @@ body {
   --ie__grey: #8f9d9d;
   --cs__orange: #f48e22;
   --oad__blue: #81d0ba;
-  --fw-light: 200;
-  --fw-medium: 400;
-  --fw-bold: 700;
+  --dark__bg: #30292f;
+  --dark__bg__highlight: #201d20;
+  /* typography */
+  --ff: Poppins, sans-serif;
+  --fw__light: 200;
+  --fw__medium: 400;
+  --fw__bold: 700;
+}
+
+body {
+  background-color: var(--dark__bg);
+  color: var(--highlight-light);
+  font-family: var(--ff);
+  font-weight: 400;
 }
 
 .container {
   display: grid;
   grid-template-columns: 300px 1fr;
+  padding: 1rem;
+}
+
+/* Nav */
+nav {
+  height: 100%;
+  left: 0;
+  padding-left: 1rem;
+  position: fixed;
+  top: 0;
+  width: 300px;
+  header {
+    font-size: 1.4rem;
+    padding-bottom: 1.6rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    li {
+      list-style-type: none;
+      a {
+        border-bottom: 1px solid var(--dark__bg__highlight);
+        color: var(--highlight-light);
+        display: block;
+        font-size: 0.9rem;
+        letter-spacing: 0.02rem;
+        padding: 0.6rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 1s;
+        &:hover {
+          color: var(--dark__bg__highlight);
+          padding-left: 2rem;
+        }
+        &#re__link:hover {
+          background-color: var(--re__green);
+        }
+        &#dm__link:hover {
+          background-color: var(--dm__blue);
+        }
+        &#its_link:hover {
+          background-color: var(--its__pink);
+        }
+        &#s__link:hover {
+          background-color: var(--s__beige);
+        }
+        &#txc__link:hover {
+          background-color: var(--tc__yellow);
+        }
+        &#f__link:hover {
+          background-color: var(--f__pink);
+        }
+        &#ec__link:hover {
+          background-color: var(--ec__blue);
+        }
+        &#iam__link:hover {
+          background-color: var(--iam__blue);
+        }
+        &#tbc__link:hover {
+          background-color: var(--tc__red);
+        }
+        &#ie__link:hover {
+          background-color: var(--ie__grey);
+        }
+        &#cs__link:hover {
+          background-color: var(--cs__orange);
+        }
+        &#oad__link:hover {
+          background-color: var(--oad__blue);
+        }
+      }
+    }
+  }
+}
+/* Main */
+section {
+  padding-bottom: 4rem;
+  li {
+    list-style-type: none;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+  padding: 4rem;
+  position: absolute;
+}
+#root_element {
+  header {
+    border-bottom: 2px solid var(--re__green);
+  }
+}
+#document_metadata {
+  header {
+    border-bottom: 2px solid var(--dm__blue);
+  }
+}
+#inline_text_semantics {
+  header {
+    border-bottom: 2px solid var(--its__pink);
+  }
+}
+#scripting {
+  header {
+    border-bottom: 2px solid var(--s__beige);
+  }
+}
+#text_content {
+  header {
+    border-bottom: 2px solid var(--tc__yellow);
+  }
+}
+#forms {
+  header {
+    border-bottom: 2px solid var(--f__pink);
+  }
+}
+#embedded_content {
+  header {
+    border-bottom: 2px solid var(--ec__blue);
+  }
+}
+#image_and_multimedia {
+  header {
+    border-bottom: 2px solid var(--iam__blue);
+  }
+}
+#table_content {
+  header {
+    border-bottom: 2px solid var(--tc__red);
+  }
+}
+#interactive_elements {
+  header {
+    border-bottom: 2px solid var(--ie__grey);
+  }
+}
+#content_sectioning {
+  header {
+    border-bottom: 2px solid var(--cs__orange);
+  }
+}
+#obsolete_and_deprecated {
+  header {
+    border-bottom: 2px solid var(--oad__blue);
+  }
 }
