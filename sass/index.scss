@@ -43,78 +43,147 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 300px 1fr;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding: 1rem;
+  @media (min-width: 50em) {
+    grid-template-columns: 300px 1fr;
+    padding: 2rem;
+  }
 }
 
 /* Nav */
 nav {
-  height: 100%;
-  left: 0;
-  padding-left: 1rem;
-  position: fixed;
-  top: 0;
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: 50em) {
+    height: 100%;
+    left: 0;
+    padding-left: 1rem;
+    position: fixed;
+    top: 100px;
+    width: 300px;
+  }
   header {
+    display: flex;
+    justify-content: center;
     font-size: 1.4rem;
     padding-bottom: 1.6rem;
+    @media (min-width: 50em) {
+      justify-content: flex-start;
+    }
   }
   ul {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 100%;
+    @media (min-width: 50em) {
+      max-width: 300px;
+    }
     li {
       list-style-type: none;
+
       a {
         border-bottom: 1px solid var(--dark__bg__highlight);
         color: var(--highlight-light);
-        display: block;
+        display: flex;
         font-size: 0.9rem;
         letter-spacing: 0.02rem;
         padding: 0.6rem;
         text-decoration: none;
         text-transform: uppercase;
         transition: all 1s;
+        @media (min-width: 50em) {
+          padding-left: 0;
+        }
         &:hover {
           color: var(--dark__bg__highlight);
           padding-left: 2rem;
         }
-        &#re__link:hover {
-          background-color: var(--re__green);
+        &:before {
+          background-color: white;
+          color: white;
+          content: "";
+          margin-right: 1rem;
+          padding: 0.1rem;
+          @media (min-width: 50em) {
+            margin-right: 0.4rem;
+          }
         }
-        &#dm__link:hover {
-          background-color: var(--dm__blue);
+        &#re__link {
+          &:hover,
+          &:before {
+            background-color: var(--re__green);
+          }
         }
-        &#its_link:hover {
-          background-color: var(--its__pink);
+        &#dm__link {
+          &:hover,
+          &:before {
+            background-color: var(--dm__blue);
+          }
         }
-        &#s__link:hover {
-          background-color: var(--s__beige);
+        &#its__link {
+          &:hover,
+          &:before {
+            background-color: var(--its__pink);
+          }
         }
-        &#txc__link:hover {
-          background-color: var(--tc__yellow);
+        &#s__link {
+          &:hover,
+          &:before {
+            background-color: var(--s__beige);
+          }
         }
-        &#f__link:hover {
-          background-color: var(--f__pink);
+        &#txc__link {
+          &:hover,
+          &:before {
+            background-color: var(--tc__yellow);
+          }
         }
-        &#ec__link:hover {
-          background-color: var(--ec__blue);
+        &#f__link {
+          &:hover,
+          &:before {
+            background-color: var(--f__pink);
+          }
         }
-        &#iam__link:hover {
-          background-color: var(--iam__blue);
+        &#ec__link {
+          &:hover,
+          &:before {
+            background-color: var(--ec__blue);
+          }
         }
-        &#tbc__link:hover {
-          background-color: var(--tc__red);
+        &#iam__link {
+          &:hover,
+          &:before {
+            background-color: var(--iam__blue);
+          }
         }
-        &#ie__link:hover {
-          background-color: var(--ie__grey);
+        &#tbc__link {
+          &:hover,
+          &:before {
+            background-color: var(--tc__red);
+          }
         }
-        &#cs__link:hover {
-          background-color: var(--cs__orange);
+        &#ie__link {
+          &:hover,
+          &:before {
+            background-color: var(--ie__grey);
+          }
         }
-        &#oad__link:hover {
-          background-color: var(--oad__blue);
+        &#cs__link {
+          &:hover,
+          &:before {
+            background-color: var(--cs__orange);
+          }
+        }
+        &#oad__link {
+          &:hover,
+          &:before {
+            background-color: var(--oad__blue);
+          }
         }
       }
     }
@@ -123,74 +192,142 @@ nav {
 /* Main */
 section {
   padding-bottom: 4rem;
+  header {
+    margin-bottom: 1.2rem;
+  }
+  ul {
+    display: grid;
+    grid-gap: 0.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 50em) {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 75em) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: 100em) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
   li {
+    background-color: var(--dark__bg__highlight);
+    border: 3px solid var(--dark__bg__highlight);
+    border-radius: 1rem;
     list-style-type: none;
+    min-width: 200px;
+    padding: 3rem 1rem;
+    text-align: center;
+    transition: border-color 1s;
   }
 }
 main {
   display: flex;
   flex-direction: column;
-  margin-left: 300px;
-  padding: 4rem;
-  position: absolute;
+  padding: 6rem 1rem 1rem 1rem;
+  @media (min-width: 50em) {
+    margin-left: 200px;
+    padding: 4rem;
+    position: absolute;
+  }
+  @media (min-width: 75em) {
+    margin-left: 300px;
+  }
 }
 #root_element {
   header {
     border-bottom: 2px solid var(--re__green);
+  }
+  ul li:hover {
+    border-color: var(--re__green);
   }
 }
 #document_metadata {
   header {
     border-bottom: 2px solid var(--dm__blue);
   }
+  ul li:hover {
+    border-color: var(--dm__blue);
+  }
 }
 #inline_text_semantics {
   header {
     border-bottom: 2px solid var(--its__pink);
+  }
+  ul li:hover {
+    border-color: var(--its__pink);
   }
 }
 #scripting {
   header {
     border-bottom: 2px solid var(--s__beige);
   }
+  ul li:hover {
+    border-color: var(--s__beige);
+  }
 }
 #text_content {
   header {
     border-bottom: 2px solid var(--tc__yellow);
+  }
+  ul li:hover {
+    border-color: var(--tc__yellow);
   }
 }
 #forms {
   header {
     border-bottom: 2px solid var(--f__pink);
   }
+  ul li:hover {
+    border-color: var(--f__pink);
+  }
 }
 #embedded_content {
   header {
     border-bottom: 2px solid var(--ec__blue);
+  }
+  ul li:hover {
+    border-color: var(--ec__blue);
   }
 }
 #image_and_multimedia {
   header {
     border-bottom: 2px solid var(--iam__blue);
   }
+  ul li:hover {
+    border-color: var(--iam__blue);
+  }
 }
 #table_content {
   header {
     border-bottom: 2px solid var(--tc__red);
+  }
+  ul li:hover {
+    border-color: var(--tc__red);
   }
 }
 #interactive_elements {
   header {
     border-bottom: 2px solid var(--ie__grey);
   }
+  ul li:hover {
+    border-color: var(--ie__grey);
+  }
 }
 #content_sectioning {
   header {
     border-bottom: 2px solid var(--cs__orange);
   }
+  ul li:hover {
+    border-color: var(--cs__orange);
+  }
 }
 #obsolete_and_deprecated {
   header {
     border-bottom: 2px solid var(--oad__blue);
+  }
+  ul li:hover {
+    border-color: var(--oad__blue);
   }
 }
