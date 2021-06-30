@@ -1,0 +1,3 @@
+@import"https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap";*{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}body{background-color:#30292f;color:#efefef;font-family:Poppins;font-weight:400}:root{--re__green: #43aa4f;--dm__blue: #07a9f4;--its__pink: #e82c8b;--s_beige: #b6a16a;--tc_yellow: #fdef2c;--f__pink: #af4398;--ec__blue: #6087c0;--iam__blue: #0199ae;--tc__red: #ef3646;--ie__grey: #8f9d9d;--cs__orange: #f48e22;--oad__blue: #81d0ba;--fw-light: 200;--fw-medium: 400;--fw-bold: 700}.container{display:grid;grid-template-columns:300px 1fr}
+
+/*# sourceMappingURL=index.min.css.map */
