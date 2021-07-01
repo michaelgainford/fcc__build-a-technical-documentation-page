@@ -58,19 +58,20 @@ body {
 nav {
   display: flex;
   flex-direction: column;
+  height: auto;
   width: 100%;
   @media (min-width: 50em) {
     height: 100%;
     left: 0;
     padding-left: 1rem;
     position: fixed;
-    top: 100px;
+    top: 50px;
     width: 300px;
   }
   header {
     display: flex;
-    justify-content: center;
     font-size: 1.4rem;
+    justify-content: center;
     padding-bottom: 1.6rem;
     text-transform: uppercase;
     @media (min-width: 50em) {
@@ -192,8 +193,8 @@ nav {
 }
 /* Main */
 section {
-  padding-bottom: 4rem;
-  padding-top: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
   header {
     margin-bottom: 2.4rem;
     text-transform: lowercase;
@@ -233,10 +234,8 @@ section {
     font-weight: var(--fw__bold);
     letter-spacing: 0.35rem;
     line-height: 1rem;
-    margin-top: -1.5rem;
-    padding-bottom: 0.4rem;
-    padding-right: 0.4rem;
-    padding-top: 0.2rem;
+    margin-top: -1.6rem;
+    margin-right: 0.5rem;
     text-transform: uppercase;
     text-align: right;
   }
@@ -244,9 +243,15 @@ section {
     background-color: #3a3339;
     border-radius: 1rem;
     font-family: monospace;
-    font-size: 0.84rem;
+    font-size: 0.72rem;
     display: flex;
     padding: 2rem 0.2rem;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    word-wrap: normal;
+    @media (min-width: 40em) {
+      font-size: 0.84rem;
+    }
     code {
       margin-left: -6.5rem;
       padding: 0;
@@ -282,12 +287,11 @@ main {
   display: flex;
   flex-direction: column;
   padding: 6rem 1rem 1rem 1rem;
-  width: 100%;
   @media (min-width: 50em) {
-    margin-left: 200px;
+    margin-left: 250px;
     padding: 4rem;
     position: absolute;
-    width: auto;
+    width: calc(100vw - 300px);
   }
   @media (min-width: 75em) {
     margin-left: 300px;

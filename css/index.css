@@ -72,6 +72,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: auto;
   width: 100%;
 }
 @media (min-width: 50em) {
@@ -80,7 +81,7 @@ nav {
     left: 0;
     padding-left: 1rem;
     position: fixed;
-    top: 100px;
+    top: 50px;
     width: 300px;
   }
 }
@@ -88,10 +89,10 @@ nav header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 1.4rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 1.4rem;
   padding-bottom: 1.6rem;
   text-transform: uppercase;
 }
@@ -194,8 +195,8 @@ nav ul li a#oad__link:hover, nav ul li a#oad__link:before {
 
 /* Main */
 section {
-  padding-bottom: 4rem;
-  padding-top: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
 }
 section header {
   margin-bottom: 2.4rem;
@@ -242,10 +243,8 @@ section li {
   font-weight: var(--fw__bold);
   letter-spacing: 0.35rem;
   line-height: 1rem;
-  margin-top: -1.5rem;
-  padding-bottom: 0.4rem;
-  padding-right: 0.4rem;
-  padding-top: 0.2rem;
+  margin-top: -1.6rem;
+  margin-right: 0.5rem;
   text-transform: uppercase;
   text-align: right;
 }
@@ -253,11 +252,19 @@ section li {
   background-color: #3a3339;
   border-radius: 1rem;
   font-family: monospace;
-  font-size: 0.84rem;
+  font-size: 0.72rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 2rem 0.2rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  word-wrap: normal;
+}
+@media (min-width: 40em) {
+  .main-section pre {
+    font-size: 0.84rem;
+  }
 }
 .main-section pre code {
   margin-left: -6.5rem;
@@ -282,7 +289,7 @@ section li {
   content: ">";
 }
 .main-section pre .closing-no-slash-tag::before {
-  content: ">";
+  content: "";
 }
 
 main {
@@ -294,14 +301,13 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 6rem 1rem 1rem 1rem;
-  width: 100%;
 }
 @media (min-width: 50em) {
   main {
-    margin-left: 200px;
+    margin-left: 250px;
     padding: 4rem;
     position: absolute;
-    width: auto;
+    width: calc(100vw - 300px);
   }
 }
 @media (min-width: 75em) {
